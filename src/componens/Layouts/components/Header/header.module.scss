@@ -60,7 +60,7 @@
     }
 }
 
-.search-title{
+.search-title {
     color: rgba(22, 24, 35, 0.5);
     font-size: 1.4rem;
     font-weight: 600;
@@ -92,4 +92,8 @@
     &:active {
         background-color: rgba(22, 24, 35, 0.06);
     }
+}
+
+.custom {
+    color: chartreuse;
 }
