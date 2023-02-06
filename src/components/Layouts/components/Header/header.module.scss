@@ -54,7 +54,7 @@
         height: calc(var(--search-height) - var(--search-top-spacer) * 2);
         background-color: rgba(22, 24, 35, 0.12);
     }
-
+r
     &:focus-within {
         border-color: rgba(22, 24, 35, 0.2);
     }
@@ -94,6 +94,10 @@
     }
 }
 
-.custom {
-    color: chartreuse;
+.moreBtn{
+    font-size: 2rem;
+    margin-left: 28px;
+    padding: 4px 8px;
+    background: transparent;
 }
+

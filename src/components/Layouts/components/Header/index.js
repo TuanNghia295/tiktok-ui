@@ -3,18 +3,45 @@ import classNames from 'classnames/bind';
 
 import styles from './header.module.scss';
 import images from '~/assets/images';
-import { Wrapper as PopperWrapper } from '~/componens/Popper';
-import AccountItem from '~/componens/AccountItem';
-import Button from '~/componens/Button';
+import { Wrapper as PopperWrapper } from '~/components/Popper';
+import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 //Import icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faSign, faSignIn } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faSpinner,
+    faMagnifyingGlass,
+    faSign,
+    faSignIn,
+    faEllipsisVertical,
+    faEarthAsia,
+    faCircleQuestion,
+    faKeyboard,
+} from '@fortawesome/free-solid-svg-icons';
 
 //Import Tippy library
 import Tippy from '@tippyjs/react/headless';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
+        title:'Tiếng Việt'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
+        title:'Feedback and help',
+        to:'/feedback'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
+        title:'Keyboard shortcuts',
+    },
+];
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
@@ -57,9 +84,13 @@ function Header() {
 
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
-                    <Button primary>
-                        Log in
-                    </Button>
+                    <Button primary>Log in</Button>
+
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('moreBtn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
