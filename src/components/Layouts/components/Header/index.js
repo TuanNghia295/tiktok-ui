@@ -13,8 +13,6 @@ import {
     faCircleXmark,
     faSpinner,
     faMagnifyingGlass,
-    faSign,
-    faSignIn,
     faEllipsisVertical,
     faEarthAsia,
     faCircleQuestion,
@@ -30,20 +28,38 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
-        title:'Tiếng Việt'
+        title: 'Tiếng Việt',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type:'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type:'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
-        title:'Feedback and help',
-        to:'/feedback'
+        title: 'Feedback and help',
+        to: '/feedback',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title:'Keyboard shortcuts',
+        title: 'Keyboard shortcuts',
     },
 ];
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
+    const handleMenuChange = (data) => {
+        console.log(data);
+    };
     useEffect(() => {
         setTimeout(() => {
             setSearchResult([]);
@@ -86,7 +102,7 @@ function Header() {
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('moreBtn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>
