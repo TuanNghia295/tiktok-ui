@@ -1,12 +1,15 @@
 import Button from '../Button';
 import classNames from 'classnames/bind';
 import styles from './Icons.module.scss';
+import { forwardRef } from 'react';
 const cx = classNames.bind(styles);
-const UploadIcon = ({ className, width = '2rem', height = '2rem' }) => (
+
+const UploadIcon = forwardRef(({ className, width = '2rem', height = '2rem' }, ref) => (
     <Button
         className={cx('uploadBtn')}
         leftIcon={
             <svg
+                ref={ref}
                 className={className}
                 width={width}
                 data-e2e=""
@@ -25,7 +28,7 @@ const UploadIcon = ({ className, width = '2rem', height = '2rem' }) => (
     >
         Upload
     </Button>
-);
+));
 
 const MessagesIcon = ({ className }) => (
     <svg
@@ -70,7 +73,7 @@ const SearchIcon = ({ className, width = '2.4rem', height = '2.4rem' }) => (
         data-e2e=""
         height={height}
         viewBox="0 0 48 48"
-        fill="rgba(22, 24, 35, .34)"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
     >
         <path

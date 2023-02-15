@@ -74,8 +74,13 @@
     text-align: center;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid #d2c9c9;
+    border: 1px solid rgba(22, 24, 35, 0.05);
     padding: 8px 16px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.05);
+        border: 1px solid rgba(22, 24, 35, 0.05);
+    }
 }
 
 .text {
