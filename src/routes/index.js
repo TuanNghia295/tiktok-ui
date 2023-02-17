@@ -3,9 +3,9 @@ import { HeaderOnly } from '~/components/Layouts';
 
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
-import Profile from '~/pages/profile';
 import Upload from '~/pages/upload';
 import Search from '~/pages/Search';
+import Profile from '~/pages/profile';
 // public Routes
 const publicRoutes = [
     {
@@ -17,7 +17,7 @@ const publicRoutes = [
         component: Following,
     },
     {
-        path: '/profile',
+        path: `/@/:nickname`,
         component: Profile,
     },
     {
@@ -28,8 +28,8 @@ const publicRoutes = [
     {
         path: '/search',
         component: Search,
-        layout: null
-    }
+        layout: null,
+    },
 ];
 
 //Private Routes
