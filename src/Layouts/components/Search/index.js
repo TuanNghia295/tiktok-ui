@@ -8,9 +8,9 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { SearchIcon } from '~/components/icons';
-import useDebounce from '~/components/Hooks/useDebounce';
+import useDebounce from '~/Hooks/useDebounce';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/Services/searchServices';
 
 const cx = classNames.bind(styles);
 function Search() {
@@ -56,7 +56,6 @@ function Search() {
         }
     };
 
-    const handleSubmit = (e) => {};
     return (
         <HeadlessTippy
             visible={showResults && searchResult.length > 0}
