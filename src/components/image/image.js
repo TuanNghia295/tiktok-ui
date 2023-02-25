@@ -23,7 +23,7 @@ const Image = forwardRef(
     },
 );
 
-forwardRef.propTypes = {
+Image.propTypes = {
     src: PropTypes.string,
     alt: PropTypes.string,
     className: PropTypes.string,
