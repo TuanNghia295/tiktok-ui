@@ -8,6 +8,7 @@ import Following from '~/pages/Following';
 import Upload from '~/pages/upload';
 import Search from '~/pages/Search';
 import Profile from '~/pages/profile';
+import Live from '~/pages/Live';
 // public Routes
 const publicRoutes = [
     {
@@ -30,6 +31,11 @@ const publicRoutes = [
     {
         path: config.routes.search,
         component: Search,
+        layout: null,
+    },
+    {
+        path: config.routes.live,
+        component: Live,
         layout: null,
     },
 ];

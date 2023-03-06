@@ -149,7 +149,7 @@ function Header() {
                                 src=""
                                 className={cx('user-avatar')}
                                 alt=""
-                                fallback="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/a7947a5bef5ca52c9d2668237ccdbd4f.jpeg?x-expires=1676304000&x-signature=%2FVOyfqx5UgifML7nLD5kzlC6ws4%3D"
+                                fallback="https://p16-sign-va.tiktokcdn.com/musically-maliva-obj/1661351444560902~c5_100x100.jpeg?x-expires=1678269600&x-signature=rH0%2Fe8Y4OhCTSw4EoNfiVh7ohv0%3D"
                             ></Image>
                         ) : (
                             <button className={cx('moreBtn')}>
